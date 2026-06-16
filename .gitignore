@@ -1,0 +1,38 @@
+# Virtual environment
+venv/
+.venv/
+
+# Secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+
+# FAISS index — large binary, regenerate from source
+vector_store/
+*.faiss
+*.pkl
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Test coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Don't commit PDFs or large data files
+data/
+*.pdf
+
+# Conda — environment is recreated from requirements.txt, not committed
+.conda/
