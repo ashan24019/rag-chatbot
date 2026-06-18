@@ -1,10 +1,11 @@
 from dotenv import load_dotenv
+
 from app.rag_engine import (
-    load_document,
-    chunk_documents,
+    ask,
     build_vector_store,
+    chunk_documents,
+    load_document,
     save_vector_store,
-    ask
 )
 
 load_dotenv()

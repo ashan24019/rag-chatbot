@@ -1,4 +1,4 @@
-# RAG Chatbot — Project 1
+# RAG Chatbot - Project 1
 
 Ask questions about any PDF or text document. Built with LangChain, OpenAI, and FAISS.
 

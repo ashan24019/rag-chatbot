@@ -1,6 +1,8 @@
 import pytest
 from langchain.schema import Document
+
 from app.rag_engine import chunk_documents, load_document
+
 
 def make_doc(text: str) -> Document:
     """Helper — wraps raw text in a LangChain Document."""
@@ -20,15 +22,15 @@ class TestChucking:
         docs = [make_doc("Short text.")]
         chunks = chunk_documents(docs)
         assert len(chunks) == 1
-    
+
     def test_chunk_size_respected(self):
         """No chunk should be significantly larger than chunk_size."""
         docs = [make_doc("word "*500)]
         chunks = chunk_documents(docs, chunk_size=200, chunk_overlap=50)
         for chunk in chunks:
             assert len(chunk.page_content) <= 300  # tolerance for separator logic
-        
-    
+
+
     def test_overlap_shares_content_between_chunks(self):
         """Consecutive chunks should share some content due to overlap."""
 
