@@ -45,7 +45,7 @@ def main():
 
         print(f"\nBot: {result['answer']}")
         print("\nRetrieved from:")
-        for i, src in enumerate(result["sources"], 1):
+        for i, src in enumerate(result["source"], 1):
             print(f"  [{i}] {src[:150]}...")
         print()
 

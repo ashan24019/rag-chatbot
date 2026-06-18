@@ -66,7 +66,7 @@ def ask(vector_store, question: str, k: int =3) -> dict:
         return_source_documents = True
     )
 
-    result = qa_chain.invoke({"querry": question})
+    result = qa_chain.invoke({"query": question})
 
     return {
         "answer" : result["result"],
