@@ -9,15 +9,16 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 # Load a PDF or .txt file and return a list of Document objects.
 def load_document(file_path: str):
+    if not file_path.endswith(".pdf") and not file_path.endswith(".txt"):
+        raise ValueError("Unsupported file type. Only .pdf and .txt are supported.")
+
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
 
     if file_path.endswith(".pdf"):
         loader = PyPDFLoader(file_path)
-    elif file_path.endswith(".txt"):
-        loader = TextLoader(file_path, encoding="utf=8")
     else:
-        raise ValueError("Unsupported file type. Only .pdf and .txt are supported.")
+        loader = TextLoader(file_path, encoding="utf-8")
 
     return loader.load()
 
