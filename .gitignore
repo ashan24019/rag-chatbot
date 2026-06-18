@@ -36,3 +36,5 @@ data/
 
 # Conda — environment is recreated from requirements.txt, not committed
 .conda/
+
+.streamlit/secrets.toml
