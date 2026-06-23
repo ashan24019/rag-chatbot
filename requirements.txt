@@ -2,7 +2,7 @@ openai==1.35.3
 langchain==0.2.6
 langchain-openai==0.1.14
 langchain-community==0.2.6
-faiss-cpu==1.8.0
+faiss-cpu==1.14.3
 pypdf==4.2.0
 python-dotenv==1.0.1
 tiktoken==0.7.0
